@@ -1,20 +1,16 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   eslint: {
     dirs: ['pages', 'utils', 'components', 'lib', 'app'],
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
-  },
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
   },
   async headers() {
     return [
