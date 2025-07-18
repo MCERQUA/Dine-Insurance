@@ -1,7 +1,7 @@
 ---
 // Diné Insurance Homepage
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Navbar from '@components/ui/Navbar.astro';
+import DineHeader from '@components/ui/DineHeader.astro';
 import Hero from '@components/sections/Hero.astro';
 import BlogPreview from '@components/sections/BlogPreview.astro';
 import ContactForm from '@components/sections/ContactForm.astro';
@@ -12,8 +12,8 @@ const pageDescription = 'Trusted insurance solutions for the Diné people. We un
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <!-- Navigation -->
-  <Navbar logo="Diné Insurance" />
+  <!-- Modern React Header -->
+  <DineHeader />
   
   <!-- Main Content -->
   <main class="flex-1">

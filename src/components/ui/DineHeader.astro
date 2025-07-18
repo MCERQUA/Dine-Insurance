@@ -1,0 +1,26 @@
+---
+// Astro wrapper for the React DineInsuranceHeader component
+import DineInsuranceHeader from '@components/ui/DineInsuranceHeader.tsx';
+
+export interface Props {
+  companyName?: string;
+  phone?: string;
+  email?: string;
+  location?: string;
+}
+
+const { 
+  companyName = "Diné Insurance",
+  phone = "(928) 555-0123",
+  email = "info@dineinsurance.com",
+  location = "Window Rock, AZ"
+} = Astro.props;
+---
+
+<DineInsuranceHeader 
+  companyName={companyName}
+  phone={phone}
+  email={email}
+  location={location}
+  client:load
+/>

@@ -22,9 +22,29 @@ export const componentRegistry = {
     },
     Navbar: {
       path: '@components/ui/Navbar',
-      description: 'Navigation bar with responsive design',
+      description: 'Navigation bar with responsive design (Astro)',
       props: ['logo?', 'links', 'transparent?'],
       status: 'ready'
+    },
+    DineInsuranceHeader: {
+      path: '@components/ui/DineInsuranceHeader',
+      description: 'Modern React header with Diné cultural branding and professional insurance design',
+      props: ['companyName?', 'phone?', 'email?', 'location?'],
+      variants: ['desktop-navigation', 'mobile-sheet'],
+      status: 'ready',
+      framework: 'React',
+      dependencies: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-navigation-menu'],
+      culturalElements: ['Hózhó messaging', 'Diné color scheme', 'Sacred trust language'],
+      astroWrapper: '@components/ui/DineHeader',
+      features: [
+        'Two-tier header design (contact bar + main navigation)',
+        'Gradient background with cultural colors',
+        'Responsive dropdown navigation menus',
+        'Mobile-first sheet navigation',
+        'Cultural messaging integration',
+        'Professional insurance service organization',
+        'Accessible focus states and ARIA labels'
+      ]
     }
   },
   

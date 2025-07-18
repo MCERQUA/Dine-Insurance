@@ -69,3 +69,76 @@ html {
 .focus-visible {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2;
 }
+
+/* Radix UI Animation Support */
+@layer base {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  @keyframes slideInFromTop {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes slideOutToTop {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+  }
+  
+  @keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes slideOutToRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+  }
+  
+  .animate-in {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  .animate-out {
+    animation-duration: 0.15s;
+    animation-fill-mode: both;
+  }
+  
+  .fade-in-0 { animation-name: fadeIn; }
+  .fade-out-0 { animation-name: fadeOut; }
+  .slide-in-from-top { animation-name: slideInFromTop; }
+  .slide-out-to-top { animation-name: slideOutToTop; }
+  .slide-in-from-right { animation-name: slideInFromRight; }
+  .slide-out-to-right { animation-name: slideOutToRight; }
+}
+
+/* Radix UI Color Variables */
+:root {
+  --background: 245 241 232; /* cream */
+  --foreground: 107 78 61; /* earth-brown */
+  --muted: 232 220 196; /* sand */
+  --muted-foreground: 107 78 61; /* earth-brown */
+  --popover: 254 253 251; /* soft-white */
+  --popover-foreground: 107 78 61; /* earth-brown */
+  --card: 254 253 251; /* soft-white */
+  --card-foreground: 107 78 61; /* earth-brown */
+  --border: 232 220 196; /* sand */
+  --input: 232 220 196; /* sand */
+  --primary: 184 84 80; /* red-clay */
+  --primary-foreground: 254 253 251; /* soft-white */
+  --secondary: 95 179 179; /* turquoise */
+  --secondary-foreground: 254 253 251; /* soft-white */
+  --accent: 139 157 131; /* sage */
+  --accent-foreground: 254 253 251; /* soft-white */
+  --destructive: 239 68 68; /* red */
+  --destructive-foreground: 254 253 251; /* soft-white */
+  --ring: 95 179 179; /* turquoise */
+}
