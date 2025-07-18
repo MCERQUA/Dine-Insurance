@@ -76,18 +76,18 @@ const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) 
                     <Star
                       key={i}
                       className={`w-5 h-5 ${
-                        i < testimonial.rating ? 'text-amber-500 fill-current' : 'text-gray-300'
+                        i < testimonial.rating ? 'text-yellow-500 fill-current' : 'text-gray-300'
                       }`}
                     />
                   ))}
                 </div>
-                <blockquote className="text-xl text-stone-700 mb-6 italic">
+                <blockquote className="text-xl text-gray-700 mb-6 italic">
                   "{testimonial.content}"
                 </blockquote>
                 <div>
-                  <div className="font-semibold text-stone-900">{testimonial.name}</div>
-                  <div className="text-stone-600">{testimonial.role}</div>
-                  <div className="text-terracotta-700 font-medium">{testimonial.tribe}</div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="text-gray-600">{testimonial.role}</div>
+                  <div className="text-red-700 font-medium">{testimonial.tribe}</div>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ const TestimonialCarousel = ({ testimonials }: { testimonials: Testimonial[] }) 
             onClick={() => setCurrentIndex(index)}
             className={cn(
               "w-3 h-3 rounded-full transition-all",
-              index === currentIndex ? "bg-terracotta-600" : "bg-stone-300"
+              index === currentIndex ? "bg-red-700" : "bg-gray-300"
             )}
           />
         ))}
@@ -161,36 +161,36 @@ export default function DineInsuranceWebsite() {
       <section className="relative py-20 lg:py-32 overflow-hidden desert-gradient">
         <div className="absolute inset-0 navajo-pattern opacity-30" />
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-terracotta-200/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-canyon-200/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-200/20 rounded-full blur-3xl" />
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <Mountain className="w-16 h-16 text-terracotta-600" />
+              <Mountain className="w-16 h-16 text-red-700" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-stone-900 mb-6 font-serif">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
               From the Sacred Winds of History
-              <span className="block text-terracotta-700">To the Four Sacred Directions of Your Future</span>
+              <span className="block text-red-800">To the Four Sacred Directions of Your Future</span>
             </h1>
-            <p className="text-xl text-stone-700 mb-4 max-w-4xl mx-auto font-medium">
+            <p className="text-xl text-gray-700 mb-4 max-w-4xl mx-auto font-medium">
               The Spirit of the Navajo Code Talkers Guides Us Still.
             </p>
-            <p className="text-lg text-stone-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
               Our grandfathers spoke in sacred words, wrapped in the protection of <em>Hózhó</em> — harmony, balance, and beauty — 
               to guide a nation through war and chaos. Today, we walk that same sacred path, helping our people navigate 
               the storms and perils of modern life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-terracotta-600 hover:bg-terracotta-700 text-white px-8 py-3 shadow-lg">
+                <Button size="lg" className="bg-red-700 hover:bg-red-800 text-white px-8 py-3 shadow-lg">
                   Walk the Path of Protection
                   <ChevronRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link href="/about">
-                <Button size="lg" variant="outline" className="border-terracotta-600 text-terracotta-700 hover:bg-terracotta-50 px-8 py-3">
+                <Button size="lg" variant="outline" className="border-red-700 text-red-700 hover:bg-red-50 px-8 py-3">
                   Learn Our Values
                 </Button>
               </Link>
@@ -203,55 +203,55 @@ export default function DineInsuranceWebsite() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
               Walking in Beauty and Balance
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We don't just offer insurance. We offer protection rooted in <em>K'é</em>, respect, relationship, and connection. 
               We follow the Four Sacred Mountains to bring you peace of mind in all directions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-sand-50 mesa-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-orange-50 mesa-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-terracotta-100 rounded-lg flex items-center justify-center mb-4">
-                  <Mountain className="w-6 h-6 text-terracotta-600" />
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                  <Mountain className="w-6 h-6 text-red-700" />
                 </div>
-                <CardTitle className="text-xl text-stone-900 font-serif">Hózhó (Harmony & Balance)</CardTitle>
+                <CardTitle className="text-xl text-gray-900 font-serif">Hózhó (Harmony & Balance)</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-stone-600 text-base">
+                <CardDescription className="text-gray-600 text-base">
                   We approach every policy with respect for harmony in life, family, and the land. 
                   Your coverage reflects the balance between tradition and modern protection.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-sage-50 mesa-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-green-50 mesa-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-sage-700" />
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-green-700" />
                 </div>
-                <CardTitle className="text-xl text-stone-900 font-serif">K'é (Kinship & Respect)</CardTitle>
+                <CardTitle className="text-xl text-gray-900 font-serif">K'é (Kinship & Respect)</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-stone-600 text-base">
+                <CardDescription className="text-gray-600 text-base">
                   We treat our clients like family, with honesty and integrity. 
                   Every interaction honors the sacred relationships that bind our community together.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-canyon-50 mesa-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-amber-50 mesa-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-canyon-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-canyon-700" />
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-amber-700" />
                 </div>
-                <CardTitle className="text-xl text-stone-900 font-serif">Trust & Protection</CardTitle>
+                <CardTitle className="text-xl text-gray-900 font-serif">Trust & Protection</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-stone-600 text-base">
+                <CardDescription className="text-gray-600 text-base">
                   Safeguarding what our clients have built for generations to come. 
                   We protect more than property — we protect legacy, family, and future generations.
                 </CardDescription>
@@ -262,13 +262,13 @@ export default function DineInsuranceWebsite() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-stone-50 to-sand-50">
+      <section id="services" className="py-20 bg-gradient-to-br from-stone-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
               Insurance Services Rooted in Tradition
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive protection that honors Diné sovereignty while providing 
               modern coverage for your home, vehicle, and business ventures.
             </p>
@@ -278,17 +278,17 @@ export default function DineInsuranceWebsite() {
             {services.map((service, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white mesa-shadow">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-adobe-100 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-adobe-600" />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="w-6 h-6 text-red-700" />
                   </div>
-                  <CardTitle className="text-xl text-stone-900 font-serif">{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900 font-serif">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-stone-600 text-base">
+                  <CardDescription className="text-gray-600 text-base">
                     {service.description}
                   </CardDescription>
                   <Link href="/services">
-                    <Button variant="ghost" className="mt-4 text-terracotta-600 hover:text-terracotta-700 p-0">
+                    <Button variant="ghost" className="mt-4 text-red-700 hover:text-red-800 p-0">
                       Learn more <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </Link>
@@ -303,10 +303,10 @@ export default function DineInsuranceWebsite() {
       <section id="testimonials" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
               Voices from Our Community
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from Diné families and business owners about how our insurance 
               solutions have made a difference in their lives and communities.
             </p>
@@ -326,13 +326,13 @@ export default function DineInsuranceWebsite() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-serif">
             Ready to Walk the Path of Hózhó?
           </h2>
-          <p className="text-xl text-sand-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             Get a personalized insurance quote designed specifically for Diné families and businesses. 
             Our agents understand your values and your needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-terracotta-700 hover:bg-sand-50 px-8 py-3 shadow-lg">
+              <Button size="lg" className="bg-white text-red-700 hover:bg-orange-50 px-8 py-3 shadow-lg">
                 Get Your Quote
               </Button>
             </Link>
