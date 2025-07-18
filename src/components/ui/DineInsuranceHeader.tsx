@@ -48,7 +48,7 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="w-full bg-background border-b border-border">
+    <header className="w-full bg-background border-b border-border relative z-50">
       {/* Top Bar - Cultural Contact Information */}
       <div className="bg-orange-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
@@ -87,7 +87,7 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
             </div>
 
             {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:flex">
+            <NavigationMenu className="hidden lg:flex relative z-50">
               <NavigationMenuList className="space-x-2">
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
@@ -95,10 +95,10 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[500px] gap-3 p-6 bg-background">
+                      <div className="grid w-[500px] gap-3 p-6">
                         <div className="mb-2">
                           <h3 className="text-lg font-semibold text-orange-900 mb-1">{item.title}</h3>
-                          <p className="text-sm text-orange-800/70">Choose the protection that fits your needs</p>
+                          <p className="text-sm text-orange-700/70">Choose the protection that fits your needs</p>
                         </div>
                         <div className="grid gap-2">
                           {item.items.map((subItem) => (

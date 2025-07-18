@@ -58,6 +58,13 @@
   .text-pretty {
     text-wrap: pretty;
   }
+  
+  /* Header and navigation improvements */
+  .header-nav-dropdown {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(253, 186, 116, 0.3);
+  }
 }
 
 /* Smooth scrolling */
@@ -124,21 +131,21 @@ html {
 :root {
   --background: 254 247 237; /* cream #FEF7ED */
   --foreground: 124 45 18; /* earth-brown #7C2D12 */
-  --muted: 254 215 170; /* sand #FED7AA */
+  --muted: 255 237 213; /* orange-50 #FFEDD5 */
   --muted-foreground: 124 45 18; /* earth-brown #7C2D12 */
-  --popover: 255 251 235; /* soft-white #FFFBEB */
+  --popover: 255 255 255; /* pure white #FFFFFF */
   --popover-foreground: 124 45 18; /* earth-brown #7C2D12 */
-  --card: 255 251 235; /* soft-white #FFFBEB */
+  --card: 255 255 255; /* pure white #FFFFFF */
   --card-foreground: 124 45 18; /* earth-brown #7C2D12 */
-  --border: 254 215 170; /* sand #FED7AA */
-  --input: 254 215 170; /* sand #FED7AA */
+  --border: 253 186 116; /* orange-200 #FDBA74 */
+  --input: 253 186 116; /* orange-200 #FDBA74 */
   --primary: 234 88 12; /* orange-600 #EA580C */
-  --primary-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --primary-foreground: 255 255 255; /* pure white #FFFFFF */
   --secondary: 220 38 38; /* red-600 #DC2626 */
-  --secondary-foreground: 255 251 235; /* soft-white #FFFBEB */
-  --accent: 161 98 7; /* warm-brown #A16207 */
-  --accent-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --secondary-foreground: 255 255 255; /* pure white #FFFFFF */
+  --accent: 255 237 213; /* orange-50 #FFEDD5 */
+  --accent-foreground: 194 65 12; /* orange-700 #C2410C */
   --destructive: 220 38 38; /* red-600 #DC2626 */
-  --destructive-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --destructive-foreground: 255 255 255; /* pure white #FFFFFF */
   --ring: 234 88 12; /* orange-600 #EA580C */
 }
