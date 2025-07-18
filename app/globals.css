@@ -80,15 +80,18 @@
   }
   
   .brand-gradient {
-    @apply bg-gradient-to-r from-terracotta-700 to-terracotta-800;
+    background: linear-gradient(to right, rgb(168, 63, 31), rgb(139, 49, 24));
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-terracotta-700 to-canyon-600 bg-clip-text text-transparent;
+    background: linear-gradient(to right, rgb(168, 63, 31), rgb(181, 117, 85));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .glow-effect {
-    @apply shadow-lg shadow-terracotta-500/10;
+    box-shadow: 0 10px 25px -3px rgba(199, 79, 35, 0.1);
   }
   
   .navajo-pattern {
