@@ -82,31 +82,42 @@ export const componentRegistry = {
     }
   },
   
-  // Design System
+  // Diné Insurance Design System
   designSystem: {
     colors: {
       primary: {
-        cream: '#FAF7F2',
-        sand: '#E8DCC4',
-        khaki: '#C8B89E',
-        taupe: '#A69580',
-        espresso: '#4A3F36',
-        charcoal: '#2C2826'
+        'red-clay': '#B85450',        // Earth and resilience
+        'turquoise': '#5FB3B3',       // Life, protection, healing
+        'cream': '#F5F1E8',           // Land and harmony
+        'earth-brown': '#6B4E3D',     // Deep earth brown for text
+        'charcoal': '#2C2826'         // High contrast text
       },
-      accent: {
-        'terra-cotta': '#B8946F',
-        'sage-accent': '#8B9D83',
-        'soft-white': '#FEFDFB'
+      cultural: {
+        'protection': '#5FB3B3',      // Turquoise for protection elements
+        'harmony': '#F5F1E8',         // Cream for harmony backgrounds
+        'strength': '#B85450',        // Red clay for strength/action
+        'tradition': '#8B9D83'        // Sage for traditional elements
+      },
+      functional: {
+        'sand': '#E8DCC4',            // Warm backgrounds
+        'sage': '#8B9D83',            // Supporting elements
+        'soft-white': '#FEFDFB'       // Pure white
       }
     },
     typography: {
       fontFamily: 'Inter, system-ui, sans-serif',
-      headings: 'font-bold text-espresso',
-      body: 'text-taupe'
+      headings: 'font-bold text-earth-brown',
+      body: 'text-earth-brown/80',
+      accent: 'text-turquoise'
     },
     spacing: {
       section: 'py-16 md:py-24',
       container: 'container mx-auto px-4 sm:px-6 lg:px-8'
+    },
+    cultural: {
+      hozho: 'Balance & Harmony in design and functionality',
+      ke: 'Kinship & Respect in user experience',
+      protection: 'Safeguarding user data and privacy'
     }
   }
 };

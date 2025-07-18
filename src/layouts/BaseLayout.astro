@@ -9,7 +9,7 @@ export interface Props {
 
 const { 
   title, 
-  description = "A modern website built with Astro, React, and Tailwind CSS", 
+  description = "Trusted insurance solutions for the Diné people. Protecting what matters. Honoring who you are.", 
   image = "/og-image.jpg",
   noindex = false 
 } = Astro.props;
@@ -57,9 +57,9 @@ const socialImageURL = new URL(image, Astro.url);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   
-  <body class="min-h-screen bg-cream text-espresso antialiased">
+  <body class="min-h-screen bg-harmony text-earth-brown antialiased">
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-espresso text-cream px-4 py-2 rounded-md z-50">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-earth-brown text-cream px-4 py-2 rounded-md z-50">
       Skip to main content
     </a>
     
@@ -84,7 +84,7 @@ const socialImageURL = new URL(image, Astro.url);
       
       /* Focus styles */
       *:focus-visible {
-        outline: 2px solid theme('colors.terra-cotta');
+        outline: 2px solid theme('colors.turquoise');
         outline-offset: 2px;
       }
     </style>

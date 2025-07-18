@@ -1,8 +1,8 @@
 {
-  "name": "astro-modular-template",
+  "name": "dine-insurance-website",
   "type": "module",
   "version": "1.0.0",
-  "description": "Modular Astro template with component registry system",
+  "description": "Diné Insurance - Trusted insurance solutions for the Diné people",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

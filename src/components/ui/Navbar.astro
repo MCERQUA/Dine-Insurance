@@ -14,12 +14,23 @@ const {
   class: className = ''
 } = Astro.props;
 
-// Navigation links - customize these
+// Insurance navigation links
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
+  { 
+    href: '/services', 
+    label: 'Services',
+    dropdown: [
+      { href: '/services/auto', label: 'Auto Insurance' },
+      { href: '/services/home', label: 'Homeowners Insurance' },
+      { href: '/services/business', label: 'Business Insurance' },
+      { href: '/services/life', label: 'Life Insurance' },
+      { href: '/services/farm-ranch', label: 'Farm & Ranch' },
+      { href: '/services/tribal', label: 'Tribal Business' }
+    ]
+  },
+  { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Resources' },
   { href: '/contact', label: 'Contact' }
 ];
 
@@ -36,7 +47,7 @@ const navClasses = transparent
       <!-- Logo -->
       <a 
         href="/" 
-        class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-espresso hover:text-terra-cotta transition-colors"
+        class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-earth-brown hover:text-turquoise transition-colors"
       >
         <span>{logo}</span>
       </a>
@@ -48,8 +59,8 @@ const navClasses = transparent
             href={link.href}
             class={`font-medium transition-colors ${
               currentPath === link.href 
-                ? 'text-terra-cotta' 
-                : 'text-taupe hover:text-espresso'
+                ? 'text-turquoise' 
+                : 'text-earth-brown/70 hover:text-earth-brown'
             }`}
           >
             {link.label}
@@ -57,15 +68,15 @@ const navClasses = transparent
         ))}
         
         <!-- CTA Button -->
-        <Button variant="primary" size="sm">
-          Get Started
+        <Button variant="primary" size="sm" href="/contact">
+          Get Quote
         </Button>
       </div>
       
       <!-- Mobile Menu Button -->
       <button 
         type="button"
-        class="md:hidden p-2 text-espresso hover:text-terra-cotta transition-colors"
+        class="md:hidden p-2 text-earth-brown hover:text-turquoise transition-colors"
         aria-label="Toggle menu"
         id="mobile-menu-button"
       >
@@ -86,8 +97,8 @@ const navClasses = transparent
             href={link.href}
             class={`font-medium transition-colors ${
               currentPath === link.href 
-                ? 'text-terra-cotta' 
-                : 'text-taupe hover:text-espresso'
+                ? 'text-turquoise' 
+                : 'text-earth-brown/70 hover:text-earth-brown'
             }`}
           >
             {link.label}
@@ -95,8 +106,8 @@ const navClasses = transparent
         ))}
         
         <div class="pt-2">
-          <Button variant="primary" size="sm" class="w-full">
-            Get Started
+          <Button variant="primary" size="sm" href="/contact" class="w-full">
+            Get Quote
           </Button>
         </div>
       </div>

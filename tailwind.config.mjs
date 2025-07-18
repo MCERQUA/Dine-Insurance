@@ -7,25 +7,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Main palette - warm, comfortable, professional
-        'cream': '#FAF7F2',           // Light cream background
+        // Diné Insurance Brand Colors
+        'red-clay': '#B85450',        // Red Clay / Terracotta - earth and resilience
+        'red-clay-light': '#C86B67',  // Lighter red clay
+        'red-clay-dark': '#A04A46',   // Darker red clay
+        
+        'turquoise': '#5FB3B3',       // Turquoise - life, protection, healing
+        'turquoise-light': '#7BC4C4', // Light turquoise
+        'turquoise-dark': '#4A9999',  // Dark turquoise
+        
+        'cream': '#F5F1E8',           // Cream/Sand - land and harmony
         'sand': '#E8DCC4',            // Warm sand
         'sand-dark': '#D4C4A8',       // Darker sand for cards
-        'khaki': '#C8B89E',           // Medium khaki
-        'taupe': '#A69580',           // Darker taupe
-        'espresso': '#4A3F36',        // Dark brown for text
-        'charcoal': '#2C2826',        // Almost black for high contrast
-        'brown-tint': '#7B5E48',      // Brown for glass tint
         
-        // Accent colors (use sparingly)
-        'sage-accent': '#8B9D83',     // Muted sage for eco sections only
-        'sage-mist': '#9FA897',       // Sage green for eco/savings sections
-        'terra-cotta': '#B8946F',     // Tan/brown for CTAs
+        // Supporting colors
+        'sage': '#8B9D83',            // Sage green for balance
+        'earth-brown': '#6B4E3D',     // Deep earth brown for text
+        'charcoal': '#2C2826',        // Almost black for high contrast
         'soft-white': '#FEFDFB',      // Pure soft white
         
-        // Functional colors
-        'warm-gray': '#8B8680',       // For secondary text
-        'light-gray': '#F5F2ED',      // For backgrounds
+        // Functional colors with cultural meaning
+        'protection': '#5FB3B3',      // Turquoise for protection elements
+        'harmony': '#F5F1E8',         // Cream for harmony backgrounds
+        'strength': '#B85450',        // Red clay for strength/action
+        'tradition': '#8B9D83',       // Sage for traditional elements
+        
+        // Legacy support (mapped to new colors)
+        'terra-cotta': '#B85450',     // Map to red-clay
+        'espresso': '#6B4E3D',        // Map to earth-brown
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],

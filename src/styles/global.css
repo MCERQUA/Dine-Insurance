@@ -9,15 +9,15 @@
   }
   
   body {
-    @apply bg-cream text-espresso antialiased;
+    @apply bg-harmony text-earth-brown antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-espresso;
+    @apply font-bold text-earth-brown;
   }
   
   p {
-    @apply text-taupe leading-relaxed;
+    @apply text-earth-brown/80 leading-relaxed;
   }
 }
 
@@ -67,5 +67,5 @@ html {
 
 /* Focus visible */
 .focus-visible {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terra-cotta focus-visible:ring-offset-2;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2;
 }
