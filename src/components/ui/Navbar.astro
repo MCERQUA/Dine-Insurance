@@ -1,0 +1,137 @@
+---
+// Navbar.astro - Navigation component
+import Button from './Button.astro';
+
+export interface Props {
+  logo?: string;
+  transparent?: boolean;
+  class?: string;
+}
+
+const { 
+  logo = 'Site Name',
+  transparent = false,
+  class: className = ''
+} = Astro.props;
+
+// Navigation links - customize these
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' }
+];
+
+const currentPath = Astro.url.pathname;
+
+const navClasses = transparent 
+  ? `fixed top-0 left-0 right-0 z-50 glass-effect ${className}`
+  : `bg-soft-white border-b border-sand shadow-sm ${className}`;
+---
+
+<nav class={navClasses}>
+  <div class="container-padding">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a 
+        href="/" 
+        class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-espresso hover:text-terra-cotta transition-colors"
+      >
+        <span>{logo}</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <a 
+            href={link.href}
+            class={`font-medium transition-colors ${
+              currentPath === link.href 
+                ? 'text-terra-cotta' 
+                : 'text-taupe hover:text-espresso'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        
+        <!-- CTA Button -->
+        <Button variant="primary" size="sm">
+          Get Started
+        </Button>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        type="button"
+        class="md:hidden p-2 text-espresso hover:text-terra-cotta transition-colors"
+        aria-label="Toggle menu"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div 
+      class="md:hidden border-t border-sand/30 py-4 hidden"
+      id="mobile-menu"
+    >
+      <div class="flex flex-col space-y-4">
+        {navLinks.map((link) => (
+          <a 
+            href={link.href}
+            class={`font-medium transition-colors ${
+              currentPath === link.href 
+                ? 'text-terra-cotta' 
+                : 'text-taupe hover:text-espresso'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        
+        <div class="pt-2">
+          <Button variant="primary" size="sm" class="w-full">
+            Get Started
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button icon
+        const icon = mobileMenuButton.querySelector('svg path');
+        if (icon) {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          icon.setAttribute('d', isOpen 
+            ? 'M6 18L18 6M6 6l12 12' // X icon
+            : 'M4 6h16M4 12h16M4 18h16' // Hamburger icon
+          );
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Backdrop blur for transparent navbar */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+</style>

@@ -1,0 +1,236 @@
+---
+// Blog index page - List all blog posts
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/ui/Navbar.astro';
+import Card from '@components/ui/Card.astro';
+import Footer from '@components/sections/Footer.astro';
+import { formatDate, generateExcerpt } from '@components/lib/utils';
+
+// Get all blog posts
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Get featured posts
+const featuredPosts = posts.filter(post => post.data.featured);
+
+// Get unique categories and tags
+const categories = [...new Set(posts.map(post => post.data.category).filter(Boolean))];
+const allTags = posts.flatMap(post => post.data.tags || []);
+const popularTags = [...new Set(allTags)].slice(0, 10);
+
+const pageTitle = 'Blog - Latest Insights and Updates';
+const pageDescription = 'Stay updated with our latest insights, tutorials, and news about web development, design, and technology.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Navigation -->
+  <Navbar />
+  
+  <!-- Main Content -->
+  <main class="flex-1">
+    <!-- Blog Header -->
+    <section class="section-spacing bg-gradient-to-b from-sand/20 to-transparent">
+      <div class="container-padding">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-espresso mb-6">
+            Our Blog
+          </h1>
+          <p class="text-xl text-taupe text-pretty">
+            Discover insights, tutorials, and updates from our team. Stay informed about the latest trends in web development and design.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Blog Content -->
+    <section class="section-spacing">
+      <div class="container-padding">
+        <div class="max-w-7xl mx-auto">
+          <!-- Featured Posts -->
+          {featuredPosts.length > 0 && (
+            <div class="mb-16">
+              <h2 class="text-2xl md:text-3xl font-bold text-espresso mb-8">Featured Posts</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {featuredPosts.slice(0, 2).map((post) => (
+                  <Card class="group cursor-pointer h-full flex flex-col overflow-hidden">
+                    <a href={`/blog/${post.slug}`} class="flex flex-col h-full">
+                      {post.data.image && (
+                        <div class="relative overflow-hidden">
+                          <img 
+                            src={post.data.image.src}
+                            alt={post.data.image.alt}
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <div class="absolute top-4 left-4">
+                            <span class="bg-terra-cotta text-soft-white px-3 py-1 rounded-full text-sm font-medium">
+                              Featured
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                      
+                      <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-4 text-sm text-warm-gray mb-4">
+                          <time datetime={post.data.pubDate.toISOString()}>
+                            {formatDate(post.data.pubDate)}
+                          </time>
+                          {post.data.readTime && (
+                            <>
+                              <span>•</span>
+                              <span>{post.data.readTime}</span>
+                            </>
+                          )}
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-espresso mb-3 group-hover:text-terra-cotta transition-colors">
+                          {post.data.title}
+                        </h3>
+                        
+                        <p class="text-taupe mb-4 flex-1">
+                          {generateExcerpt(post.data.description, 150)}
+                        </p>
+                        
+                        <div class="flex items-center text-terra-cotta group-hover:text-espresso transition-colors font-medium">
+                          <span>Read More</span>
+                          <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          <!-- All Posts -->
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Posts List -->
+            <div class="lg:col-span-3">
+              <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-espresso">All Posts</h2>
+                <p class="text-warm-gray">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+              </div>
+              
+              {posts.length > 0 ? (
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {posts.map((post) => (
+                    <Card class="group cursor-pointer h-full flex flex-col">
+                      <a href={`/blog/${post.slug}`} class="flex flex-col h-full">
+                        {post.data.image && (
+                          <div class="relative overflow-hidden rounded-lg mb-4">
+                            <img 
+                              src={post.data.image.src}
+                              alt={post.data.image.alt}
+                              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          </div>
+                        )}
+                        
+                        <div class="flex-1 flex flex-col">
+                          <div class="flex items-center gap-4 text-sm text-warm-gray mb-3">
+                            <time datetime={post.data.pubDate.toISOString()}>
+                              {formatDate(post.data.pubDate)}
+                            </time>
+                            {post.data.readTime && (
+                              <>
+                                <span>•</span>
+                                <span>{post.data.readTime}</span>
+                              </>
+                            )}
+                          </div>
+                          
+                          <h3 class="text-lg font-bold text-espresso mb-2 group-hover:text-terra-cotta transition-colors">
+                            {post.data.title}
+                          </h3>
+                          
+                          <p class="text-taupe mb-4 flex-1 text-sm">
+                            {generateExcerpt(post.data.description, 100)}
+                          </p>
+                          
+                          {post.data.tags && post.data.tags.length > 0 && (
+                            <div class="flex flex-wrap gap-2 mb-3">
+                              {post.data.tags.slice(0, 2).map((tag) => (
+                                <span class="px-2 py-1 bg-sand/50 text-taupe rounded text-xs">
+                                  #{tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          
+                          <div class="flex items-center text-terra-cotta group-hover:text-espresso transition-colors font-medium text-sm">
+                            <span>Read More</span>
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <div class="text-center py-16">
+                  <div class="max-w-md mx-auto">
+                    <div class="w-24 h-24 bg-sand rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg class="w-12 h-12 text-taupe" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-espresso mb-2">No Posts Yet</h3>
+                    <p class="text-taupe">We're working on some great content. Check back soon!</p>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+              <div class="sticky top-8 space-y-8">
+                <!-- Categories -->
+                {categories.length > 0 && (
+                  <Card>
+                    <h3 class="text-lg font-bold text-espresso mb-4">Categories</h3>
+                    <div class="space-y-2">
+                      {categories.map((category) => (
+                        <a href={`/blog/category/${category?.toLowerCase()}`} class="block text-taupe hover:text-terra-cotta transition-colors">
+                          {category}
+                        </a>
+                      ))}
+                    </div>
+                  </Card>
+                )}
+                
+                <!-- Popular Tags -->
+                {popularTags.length > 0 && (
+                  <Card>
+                    <h3 class="text-lg font-bold text-espresso mb-4">Popular Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                      {popularTags.map((tag) => (
+                        <a 
+                          href={`/blog/tag/${tag.toLowerCase()}`}
+                          class="px-3 py-1 bg-sand/50 text-taupe hover:bg-terra-cotta hover:text-soft-white transition-colors rounded-full text-sm"
+                        >
+                          #{tag}
+                        </a>
+                      ))}
+                    </div>
+                  </Card>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <Footer />
+</BaseLayout>

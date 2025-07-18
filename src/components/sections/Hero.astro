@@ -1,0 +1,114 @@
+---
+// Hero.astro - Hero section component
+import Button from '@components/ui/Button.astro';
+
+export interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+  backgroundImage?: string;
+  class?: string;
+}
+
+const { 
+  title,
+  subtitle,
+  ctaText = 'Get Started',
+  ctaLink = '#',
+  secondaryCtaText,
+  secondaryCtaLink,
+  backgroundImage,
+  class: className = ''
+} = Astro.props;
+
+const heroClasses = `relative overflow-hidden ${className}`;
+---
+
+<section class={heroClasses}>
+  <!-- Background -->
+  {backgroundImage ? (
+    <div class="absolute inset-0 z-0">
+      <img 
+        src={backgroundImage}
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-cream/80"></div>
+    </div>
+  ) : (
+    <div class="absolute inset-0 bg-gradient-to-br from-cream via-sand/30 to-khaki/20"></div>
+  )}
+  
+  <!-- Content -->
+  <div class="relative z-10 section-spacing">
+    <div class="container-padding">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Title -->
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-espresso mb-6 animate-fade-in text-balance">
+          {title}
+        </h1>
+        
+        <!-- Subtitle -->
+        {subtitle && (
+          <p class="text-xl md:text-2xl text-taupe mb-8 animate-slide-up text-pretty max-w-2xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          <Button 
+            href={ctaLink}
+            variant="primary"
+            size="lg"
+            class="w-full sm:w-auto"
+          >
+            {ctaText}
+          </Button>
+          
+          {secondaryCtaText && secondaryCtaLink && (
+            <Button 
+              href={secondaryCtaLink}
+              variant="outline"
+              size="lg"
+              class="w-full sm:w-auto"
+            >
+              {secondaryCtaText}
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Decorative Elements -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cream to-transparent pointer-events-none"></div>
+</section>
+
+<style>
+  /* Animation delays for staggered effect */
+  .animate-slide-up {
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+</style>

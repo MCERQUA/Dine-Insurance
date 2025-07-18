@@ -1,0 +1,67 @@
+{
+  "name": "astro-modular-template",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Modular Astro template with component registry system",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --ignore-path .gitignore",
+    "analyze": "node scripts/analyze-components.js",
+    "setup": "npm install && cp .env.example .env && echo 'Setup complete! Edit .env file and run npm run dev'",
+    "clean": "rm -rf .astro dist node_modules && npm install"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^5.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "framer-motion": "^11.0.3",
+    "lucide-react": "^0.312.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "postcss": "^8.4.33",
+    "autoprefixer": "^10.4.17",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "astro",
+    "react",
+    "tailwindcss",
+    "typescript",
+    "template",
+    "modular",
+    "blog",
+    "component-registry",
+    "responsive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/your-repo-name/issues"
+  },
+  "homepage": "https://github.com/your-username/your-repo-name#readme",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

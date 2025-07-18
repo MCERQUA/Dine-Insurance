@@ -1,0 +1,40 @@
+---
+// Dynamic blog post page - [slug].astro
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogLayout from '@layouts/BlogLayout.astro';
+import Navbar from '@components/ui/Navbar.astro';
+import Footer from '@components/sections/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogLayout 
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  author={post.data.author}
+  readTime={post.data.readTime}
+  image={post.data.image}
+  tags={post.data.tags}
+>
+  <!-- Navigation -->
+  <Navbar />
+  
+  <!-- Blog Content -->
+  <Content />
+  
+  <!-- Footer -->
+  <Footer />
+</BlogLayout>

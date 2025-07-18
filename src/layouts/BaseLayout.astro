@@ -1,0 +1,97 @@
+---
+// BaseLayout.astro - Base layout for all pages
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title, 
+  description = "A modern website built with Astro, React, and Tailwind CSS", 
+  image = "/og-image.jpg",
+  noindex = false 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    
+    <!-- Robots -->
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="min-h-screen bg-cream text-espresso antialiased">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-espresso text-cream px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
+    
+    <!-- Main content wrapper -->
+    <div id="main-content" class="flex flex-col min-h-screen">
+      <slot />
+    </div>
+    
+    <!-- Global styles -->
+    <style>
+      /* Global styles that can't be in CSS files */
+      html {
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+      
+      /* Smooth scrolling */
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+      
+      /* Focus styles */
+      *:focus-visible {
+        outline: 2px solid theme('colors.terra-cotta');
+        outline-offset: 2px;
+      }
+    </style>
+    
+    <!-- Import global CSS -->
+    <style is:global>
+      @import "../styles/global.css";
+    </style>
+  </body>
+</html>

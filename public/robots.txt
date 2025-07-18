@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (update with your domain)
+Sitemap: https://yourdomain.com/sitemap-index.xml
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Disallow specific paths (uncomment as needed)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+
+# Allow specific bots for better indexing
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block common spam bots (optional)
+# User-agent: BadBot
+# Disallow: /
