@@ -120,25 +120,25 @@ html {
   .slide-out-to-right { animation-name: slideOutToRight; }
 }
 
-/* Radix UI Color Variables */
+/* Radix UI Color Variables - Updated to Reference Image Colors */
 :root {
-  --background: 245 241 232; /* cream */
-  --foreground: 107 78 61; /* earth-brown */
-  --muted: 232 220 196; /* sand */
-  --muted-foreground: 107 78 61; /* earth-brown */
-  --popover: 254 253 251; /* soft-white */
-  --popover-foreground: 107 78 61; /* earth-brown */
-  --card: 254 253 251; /* soft-white */
-  --card-foreground: 107 78 61; /* earth-brown */
-  --border: 232 220 196; /* sand */
-  --input: 232 220 196; /* sand */
-  --primary: 184 84 80; /* red-clay */
-  --primary-foreground: 254 253 251; /* soft-white */
-  --secondary: 95 179 179; /* turquoise */
-  --secondary-foreground: 254 253 251; /* soft-white */
-  --accent: 139 157 131; /* sage */
-  --accent-foreground: 254 253 251; /* soft-white */
-  --destructive: 239 68 68; /* red */
-  --destructive-foreground: 254 253 251; /* soft-white */
-  --ring: 95 179 179; /* turquoise */
+  --background: 254 247 237; /* cream #FEF7ED */
+  --foreground: 124 45 18; /* earth-brown #7C2D12 */
+  --muted: 254 215 170; /* sand #FED7AA */
+  --muted-foreground: 124 45 18; /* earth-brown #7C2D12 */
+  --popover: 255 251 235; /* soft-white #FFFBEB */
+  --popover-foreground: 124 45 18; /* earth-brown #7C2D12 */
+  --card: 255 251 235; /* soft-white #FFFBEB */
+  --card-foreground: 124 45 18; /* earth-brown #7C2D12 */
+  --border: 254 215 170; /* sand #FED7AA */
+  --input: 254 215 170; /* sand #FED7AA */
+  --primary: 234 88 12; /* orange-600 #EA580C */
+  --primary-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --secondary: 220 38 38; /* red-600 #DC2626 */
+  --secondary-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --accent: 161 98 7; /* warm-brown #A16207 */
+  --accent-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --destructive: 220 38 38; /* red-600 #DC2626 */
+  --destructive-foreground: 255 251 235; /* soft-white #FFFBEB */
+  --ring: 234 88 12; /* orange-600 #EA580C */
 }

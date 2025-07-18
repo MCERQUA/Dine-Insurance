@@ -50,7 +50,7 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
   return (
     <header className="w-full bg-background border-b border-border">
       {/* Top Bar - Cultural Contact Information */}
-      <div className="bg-turquoise text-soft-white py-2 px-4">
+      <div className="bg-orange-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
@@ -70,19 +70,19 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Header - Diné Cultural Design */}
-      <div className="bg-gradient-to-r from-red-clay via-red-clay-light to-turquoise shadow-lg">
+      <div className="bg-gradient-to-r from-red-700 via-orange-600 to-orange-500 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo with Cultural Symbol */}
             <div className="flex items-center">
-              <div className="bg-soft-white rounded-lg p-2 mr-3 shadow-md">
-                <div className="w-8 h-8 bg-gradient-to-br from-turquoise to-red-clay rounded flex items-center justify-center">
-                  <span className="text-soft-white font-bold text-lg">D</span>
+              <div className="bg-white rounded-lg p-2 mr-3 shadow-md">
+                <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-orange-500 rounded flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">D</span>
                 </div>
               </div>
               <div>
-                <h1 className="text-soft-white text-xl font-bold">{companyName}</h1>
-                <p className="text-cream text-sm">Protecting What Matters. Honoring Who You Are.</p>
+                <h1 className="text-white text-xl font-bold">{companyName}</h1>
+                <p className="text-orange-100 text-sm">Protecting What Matters. Honoring Who You Are.</p>
               </div>
             </div>
 
@@ -91,26 +91,26 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
               <NavigationMenuList className="space-x-2">
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className="bg-transparent text-soft-white hover:bg-soft-white/10 data-[state=open]:bg-soft-white/10 border-none">
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 data-[state=open]:bg-white/10 border-none">
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid w-[500px] gap-3 p-6 bg-background">
                         <div className="mb-2">
-                          <h3 className="text-lg font-semibold text-earth-brown mb-1">{item.title}</h3>
-                          <p className="text-sm text-earth-brown/70">Choose the protection that fits your needs</p>
+                          <h3 className="text-lg font-semibold text-orange-900 mb-1">{item.title}</h3>
+                          <p className="text-sm text-orange-800/70">Choose the protection that fits your needs</p>
                         </div>
                         <div className="grid gap-2">
                           {item.items.map((subItem) => (
                             <NavigationMenuLink
                               key={subItem.title}
                               href={subItem.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-sand hover:text-earth-brown focus:bg-sand focus:text-earth-brown"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-50 hover:text-orange-900 focus:bg-orange-50 focus:text-orange-900"
                             >
-                              <div className="text-sm font-medium leading-none text-earth-brown">
+                              <div className="text-sm font-medium leading-none text-orange-900">
                                 {subItem.title}
                               </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-earth-brown/70">
+                              <p className="line-clamp-2 text-xs leading-snug text-orange-800/70">
                                 {subItem.description}
                               </p>
                             </NavigationMenuLink>
@@ -124,7 +124,7 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
                   <NavigationMenuItem key={item.title}>
                     <NavigationMenuLink
                       href={item.href}
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-soft-white transition-colors hover:bg-soft-white/10 focus:bg-soft-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10 focus:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                     >
                       {item.title}
                     </NavigationMenuLink>
@@ -135,29 +135,29 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
 
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-4">
-              <Button className="hidden sm:inline-flex bg-soft-white text-red-clay hover:bg-cream font-semibold">
+              <Button className="hidden sm:inline-flex bg-white text-red-700 hover:bg-orange-50 font-semibold">
                 Get Your Quote
               </Button>
               
               {/* Mobile Menu */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="lg:hidden text-soft-white hover:bg-soft-white/10">
+                  <Button variant="ghost" size="icon" className="lg:hidden text-white hover:bg-white/10">
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] bg-background">
                   <div className="flex flex-col space-y-4 mt-8">
                     {/* Cultural Header in Mobile */}
-                    <div className="border-b border-sand pb-4 mb-4">
-                      <h2 className="font-bold text-earth-brown">{companyName}</h2>
-                      <p className="text-sm text-earth-brown/70">Walking beside you on the path of Hózhó</p>
+                    <div className="border-b border-orange-200 pb-4 mb-4">
+                      <h2 className="font-bold text-orange-900">{companyName}</h2>
+                      <p className="text-sm text-orange-800/70">Walking beside you on the path of Hózhó</p>
                     </div>
                     
                     <div className="space-y-4">
                       {navigationItems.map((item) => (
                         <div key={item.title} className="space-y-2">
-                          <h3 className="font-semibold text-earth-brown border-b border-sand pb-2">
+                          <h3 className="font-semibold text-orange-900 border-b border-orange-200 pb-2">
                             {item.title}
                           </h3>
                           <div className="pl-4 space-y-3">
@@ -168,10 +168,10 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
                                 className="block transition-colors"
                                 onClick={() => setIsOpen(false)}
                               >
-                                <div className="text-sm font-medium text-earth-brown hover:text-turquoise">
+                                <div className="text-sm font-medium text-orange-900 hover:text-orange-600">
                                   {subItem.title}
                                 </div>
-                                <div className="text-xs text-earth-brown/60 mt-1">
+                                <div className="text-xs text-orange-800/60 mt-1">
                                   {subItem.description}
                                 </div>
                               </a>
@@ -183,7 +183,7 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
                         <a
                           key={item.title}
                           href={item.href}
-                          className="block font-semibold text-earth-brown border-b border-sand pb-2 hover:text-turquoise transition-colors"
+                          className="block font-semibold text-orange-900 border-b border-orange-200 pb-2 hover:text-orange-600 transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.title}
@@ -192,11 +192,11 @@ const DineInsuranceHeader: React.FC<HeaderProps> = ({
                     </div>
                     
                     {/* Mobile CTA */}
-                    <div className="pt-4 border-t border-sand">
-                      <Button className="w-full bg-gradient-to-r from-red-clay to-turquoise text-soft-white hover:from-red-clay-dark hover:to-turquoise-dark">
+                    <div className="pt-4 border-t border-orange-200">
+                      <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white hover:from-red-700 hover:to-orange-700">
                         Get Your Quote
                       </Button>
-                      <p className="text-xs text-earth-brown/60 text-center mt-2">
+                      <p className="text-xs text-orange-800/60 text-center mt-2">
                         Protecting families with sacred trust
                       </p>
                     </div>

@@ -7,34 +7,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Diné Insurance Brand Colors
-        'red-clay': '#B85450',        // Red Clay / Terracotta - earth and resilience
-        'red-clay-light': '#C86B67',  // Lighter red clay
-        'red-clay-dark': '#A04A46',   // Darker red clay
+        // Diné Insurance Brand Colors - Based on Reference Image
+        'orange-600': '#EA580C',      // Main orange from reference top bar
+        'orange-500': '#F97316',      // Lighter orange
+        'orange-700': '#C2410C',      // Darker orange
+        'red-600': '#DC2626',         // Red accent from reference
+        'red-700': '#B91C1C',         // Darker red for gradients
         
-        'turquoise': '#5FB3B3',       // Turquoise - life, protection, healing
-        'turquoise-light': '#7BC4C4', // Light turquoise
-        'turquoise-dark': '#4A9999',  // Dark turquoise
+        'cream': '#FEF7ED',           // Light cream background from reference
+        'sand': '#FED7AA',            // Warm sand/peach tones
+        'sand-dark': '#FDBA74',       // Darker sand for cards
         
-        'cream': '#F5F1E8',           // Cream/Sand - land and harmony
-        'sand': '#E8DCC4',            // Warm sand
-        'sand-dark': '#D4C4A8',       // Darker sand for cards
+        // Supporting colors - NO GREEN
+        'earth-brown': '#7C2D12',     // Deep brown for text (brown-800)
+        'warm-brown': '#A16207',      // Warm brown for secondary text
+        'charcoal': '#1C1917',        // Almost black for high contrast
+        'soft-white': '#FFFBEB',      // Pure soft white
         
-        // Supporting colors
-        'sage': '#8B9D83',            // Sage green for balance
-        'earth-brown': '#6B4E3D',     // Deep earth brown for text
-        'charcoal': '#2C2826',        // Almost black for high contrast
-        'soft-white': '#FEFDFB',      // Pure soft white
-        
-        // Functional colors with cultural meaning
-        'protection': '#5FB3B3',      // Turquoise for protection elements
-        'harmony': '#F5F1E8',         // Cream for harmony backgrounds
-        'strength': '#B85450',        // Red clay for strength/action
-        'tradition': '#8B9D83',       // Sage for traditional elements
+        // Functional colors with cultural meaning  
+        'protection': '#EA580C',      // Orange for protection elements
+        'harmony': '#FEF7ED',         // Cream for harmony backgrounds
+        'strength': '#DC2626',        // Red for strength/action
+        'tradition': '#A16207',       // Warm brown for traditional elements
         
         // Legacy support (mapped to new colors)
-        'terra-cotta': '#B85450',     // Map to red-clay
-        'espresso': '#6B4E3D',        // Map to earth-brown
+        'terra-cotta': '#EA580C',     // Map to orange-600
+        'red-clay': '#DC2626',        // Map to red-600 
+        'turquoise': '#EA580C',       // Map green references to orange
+        'espresso': '#7C2D12',        // Map to earth-brown
         
         // Shadcn/ui CSS variables
         background: "hsl(var(--background))",

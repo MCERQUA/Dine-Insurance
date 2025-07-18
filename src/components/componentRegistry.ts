@@ -102,26 +102,26 @@ export const componentRegistry = {
     }
   },
   
-  // Diné Insurance Design System
+  // Diné Insurance Design System - Updated to Reference Image Colors
   designSystem: {
     colors: {
       primary: {
-        'red-clay': '#B85450',        // Earth and resilience
-        'turquoise': '#5FB3B3',       // Life, protection, healing
-        'cream': '#F5F1E8',           // Land and harmony
-        'earth-brown': '#6B4E3D',     // Deep earth brown for text
-        'charcoal': '#2C2826'         // High contrast text
+        'orange-600': '#EA580C',      // Main orange from reference
+        'red-600': '#DC2626',         // Red accent from reference
+        'cream': '#FEF7ED',           // Light cream background
+        'earth-brown': '#7C2D12',     // Deep brown for text
+        'charcoal': '#1C1917'         // High contrast text
       },
       cultural: {
-        'protection': '#5FB3B3',      // Turquoise for protection elements
-        'harmony': '#F5F1E8',         // Cream for harmony backgrounds
-        'strength': '#B85450',        // Red clay for strength/action
-        'tradition': '#8B9D83'        // Sage for traditional elements
+        'protection': '#EA580C',      // Orange for protection elements
+        'harmony': '#FEF7ED',         // Cream for harmony backgrounds
+        'strength': '#DC2626',        // Red for strength/action
+        'tradition': '#A16207'        // Warm brown for traditional elements
       },
       functional: {
-        'sand': '#E8DCC4',            // Warm backgrounds
-        'sage': '#8B9D83',            // Supporting elements
-        'soft-white': '#FEFDFB'       // Pure white
+        'sand': '#FED7AA',            // Warm sand/peach tones
+        'warm-brown': '#A16207',      // Supporting elements
+        'soft-white': '#FFFBEB'       // Pure soft white
       }
     },
     typography: {
