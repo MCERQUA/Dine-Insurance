@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Menu, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@components/ui/sheet';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@components/ui/navigation-menu';
