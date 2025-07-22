@@ -6,14 +6,8 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--production=false"
 
-# Disable automatic framework detection
-[template]
-  incoming_hooks = ["Astro"]
-
-# Explicitly disable Next.js plugin
-[plugins]
-  package = "@netlify/plugin-nextjs"
-  disabled = true
+# Disable automatic framework detection and Next.js plugin
+# Note: Remove any Next.js plugin from Netlify UI if it was auto-added
 
 [dev]
   command = "npm run dev"
