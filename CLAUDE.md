@@ -116,24 +116,27 @@ ComponentName: {
 ### Color Palette (defined in tailwind.config.mjs)
 ```javascript
 colors: {
-  // Primary palette
-  'cream': '#FAF7F2',      // Light backgrounds
-  'sand': '#E8DCC4',       // Card backgrounds  
-  'taupe': '#A69580',      // Text, borders
-  'espresso': '#4A3F36',   // Headings, dark text
-  'charcoal': '#2C2826',   // High contrast text
+  // Diné Insurance Brand Colors - Based on Reference Image
+  'orange-600': '#EA580C',      // Main orange from reference
+  'red-600': '#DC2626',         // Red accent from reference
+  'cream': '#FEF7ED',           // Light cream background
+  'sand': '#FED7AA',            // Warm sand/peach tones
+  'earth-brown': '#7C2D12',     // Deep brown for text
+  'charcoal': '#1C1917',        // High contrast text
   
-  // Accent colors
-  'terra-cotta': '#B8946F', // CTAs, links
-  'sage-accent': '#8B9D83', // Eco sections
-  'soft-white': '#FEFDFB'   // Pure white
+  // Functional colors with cultural meaning
+  'protection': '#EA580C',      // Orange for protection elements
+  'harmony': '#FEF7ED',         // Cream for harmony backgrounds
+  'strength': '#DC2626',        // Red for strength/action
+  'tradition': '#A16207',       // Warm brown for traditional elements
+  'soft-white': '#FFFBEB'       // Pure soft white
 }
 ```
 
 ### Typography
-- **Font:** Inter (Google Fonts)
-- **Headings:** Bold, espresso color
-- **Body:** Regular, taupe color
+- **Font:** Inter (system-ui fallback)
+- **Headings:** Bold, earth-brown color
+- **Body:** Regular, earth-brown/80 color
 
 ### Standard Spacing
 - **Sections:** `py-16 md:py-24`
