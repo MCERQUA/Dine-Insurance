@@ -6,13 +6,6 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--production=false"
 
-# SPA fallback for client-side routing (remove if not needed)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-
 [dev]
   command = "npm run dev"
   port = 4321

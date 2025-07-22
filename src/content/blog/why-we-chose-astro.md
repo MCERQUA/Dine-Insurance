@@ -113,7 +113,7 @@ Astro consistently achieves:
 
 ### Perfect For:
 - **Content-heavy sites** (blogs, documentation)
-- **Marketing websites** with occasional interactivity
+- **Marketing websites** with oDINE-Navajosional interactivity
 - **E-commerce** product pages
 - **Portfolio sites** for creators
 - **Corporate websites** with mixed content
@@ -239,7 +239,7 @@ Astro excels at what most websites actually need:
 - **Excellent developer experience**
 - **Future-proof architecture**
 
-For content-focused sites that need occasional interactivity, Astro is the sweet spot between simplicity and power.
+For content-focused sites that need oDINE-Navajosional interactivity, Astro is the sweet spot between simplicity and power.
 
 The question isn't whether Astro is the best static site generator – it's whether it's the right fit for your specific project. For this template's use case, it absolutely is.
 
